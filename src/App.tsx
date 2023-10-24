@@ -3,6 +3,7 @@ import './App.css';
 import Cars from './Components/cars';
 import Hire from './Components/hire';
 import "./App.css";
+import { Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 
 const myStyle={
   backgroundImage: 
@@ -15,8 +16,10 @@ const myStyle={
 function App() {
   return (
     <div style={myStyle}>
-      <Cars />
-      <Hire />
+      <Routes>
+      <Route path="/" element={<Cars />} />
+      </Routes>
+      
     </div>
   );
 }

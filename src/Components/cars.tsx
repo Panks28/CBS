@@ -5,6 +5,7 @@ import { CarDataType } from '../Types/carsTypes'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { MaterialReactTable, MRT_PaginationState, type MRT_ColumnDef } from 'material-react-table'
 import { Button, Input, InputLabel, MenuItem, Select } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add';
 
 enum CategoryEnum {
   smallCar = "Small Car",
@@ -85,7 +86,7 @@ function Cars() {
   return (
     <div>
       <div>
-        <h3>Add a New Car</h3>
+        <h1>Add a New Car</h1>
         <div style={{}}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', alignContent: 'center' }}>
             <InputLabel>Registration Number</InputLabel>
@@ -110,7 +111,7 @@ function Cars() {
             </Select>
             <InputLabel style={{ marginTop: '10px' }}>Price Per Day($)</InputLabel>
             <Input style={{ width: '180px', marginTop: '5px' }} type='number' {...register("priceperday", { required: true })} />
-            <Button type='submit' style={{ width: '120px', marginTop: '20px', border:'10px'}}>Add Car</Button>
+            <Button variant='contained' type='submit' style={{ width: '160px', marginTop: '20px', border: '10px' }} startIcon={<AddIcon />}>Add Car</Button>
           </form>
         </div>
       </div>
